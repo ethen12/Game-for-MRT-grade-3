@@ -16,6 +16,9 @@ let img13;
 let img14;
 let img15;
 let img16;
+let img17;
+let img18;
+let img19;
 function preload() {
   img = 
     loadImage('assets/Main.jpg');
@@ -30,10 +33,10 @@ function preload() {
   img6 = loadImage('assets/Jungle4.jpg');
   img7 = loadImage('assets/Mountain5.jpg');
   img8 = loadImage('assets/Desert6.jpg');
-  img9 = loadImage('assets/Pyramid7.jpg');
-  img10 = loadImage('assets/Rome8.jpg');
-  img11 = loadImage('assets/Eiffel9.jpg');
-  img12 = loadImage('assets/GreatW10.jpg');
+  img9 = loadImage('assets/Pyramid7.jfif');
+  img10 = loadImage('assets/Rome8.jfif');
+  img11 = loadImage('assets/Eiffel9.jfif');
+  img12 = loadImage('assets/GreatW10.jfif');
   img13 = loadImage('assets/Wrong.jpg');
   img14 =
     loadImage('assets/Win.jpg');
@@ -41,6 +44,12 @@ function preload() {
     loadImage('assets/PaintSplat.png');
   img16 = 
    loadImage('assets/PaintPallet.png');
+  img17 = 
+   loadImage('assets/Nathan.png');
+  img18 = 
+   loadImage('assets/Jennifer.png');
+  img19 = 
+   loadImage('assets/Dima.png');
 }
 function setup() {
   createCanvas(400, 400);
@@ -165,8 +174,28 @@ var btnP = new Button({//lvl 10 answer
       y: 350,
       label: "76",
 });
+var btnQ = new Button({
+      x: 40,
+      y: 280,
+      label: "NoSoul",
+});
+var btnR = new Button({//go to game scenes
+      x: 175,
+      y: 280,
+      label: "QueenT",
+});
+var btnS = new Button({//go to game scenes
+      x: 310,
+      y: 280,
+      label: "UniGirl",
+});
 var Charac;
 var sceneNum=0;
+var CharacX;
+if (CharacX > 10000) {
+        CharacX = 0;
+    }
+    CharacX += 0.70;
 
 var drawScene0 = function(){
   
@@ -193,14 +222,27 @@ var drawScene0 = function(){
 }//title screen
 var drawScene1 = function(){
    sceneNum=1;
+  
   loadImage('assets/Ready.jpg', img => {
     img.resize(400,400);
     
     image(img, 0, 0);
   });
+  loadImage('assets/Nathan.png', img => {   
+      img.resize(250,200);
+    image(img, -40, 90);
+  });
+  loadImage('assets/Jennifer.png', img => {   
+      img.resize(135,160);
+    image(img, 147, 115);
+  });
+  loadImage('assets/Dima.png', img => {   
+      img.resize(400,300);
+    image(img, 150, 90);
+  });
   frameRate(700);
   btnD.draw()
-  btnE.draw()
+  
     
 }//Ready screen
 var drawScene2 = function(){
@@ -485,7 +527,7 @@ loadImage('assets/Desert6.jpg', img => {
     text("+",190,295);
 }//lvl6
 var drawScene13 = function(){
-  loadImage('assets/Pyramid7.jpg', img => {
+  loadImage('assets/Pyramid7.jfif', img => {
     img.resize(400,400);
     image(img, 0,-45);
   });
@@ -514,7 +556,7 @@ var drawScene13 = function(){
     text("+",190,295);
 }//lvl7
 var drawScene14 = function(){
-loadImage('assets/Rome8.jpg', img => {
+loadImage('assets/Rome8.jfif', img => {
     img.resize(400,400);
     image(img, 0,-80);
   });
@@ -544,7 +586,7 @@ loadImage('assets/Rome8.jpg', img => {
     text("+",190,295);
 }//lvl8
 var drawScene15 = function(){
-loadImage('assets/Eiffel9.jpg', img => {
+loadImage('assets/Eiffel9.jfif', img => {
     img.resize(400,320);
     image(img, 0,0);
   });
@@ -574,7 +616,7 @@ loadImage('assets/Eiffel9.jpg', img => {
     text("+",190,295);
 }//lvl9
 var drawScene16 = function(){
-  loadImage('assets/GreatW10.jpg', img => {
+  loadImage('assets/GreatW10.jfif', img => {
     img.resize(400,350);
     image(img, 0,0);
   });
@@ -725,19 +767,43 @@ function mouseClicked () {
       }else if (btnL.isMouseInside()&&sceneNum===16){
        sceneNum=5;
       }
-       else if (btnQ.isMouseInside()&&sceneNum===0){
+       else if (btnQ.isMouseInside()&&sceneNum===1){
           Charac=1;
-        sceneNum=1;
-      } else if (btnR.isMouseInside()&&sceneNum===0){
+        sceneNum=6;
+      } else if (btnR.isMouseInside()&&sceneNum===1){
         Charac=2;
-        sceneNum=1;
-      } else if (btnS.isMouseInside()&&sceneNum===0){
+        sceneNum=6;
+      } else if (btnS.isMouseInside()&&sceneNum===1){
         Charac=3;
-        sceneNum=1;
+        sceneNum=6;
       }
       
 }//button logic
+
 function draw() {
+  if (Charac===2&&sceneNum>5) {
+   
+    loadImage('assets/Jennifer.png', img => {
+   CharacX=0;
+      img.resize(100,110);
+    image(img, CharacX, 100);
+  });
+  } else if (Charac===3&&sceneNum>5) {
+    
+    loadImage('assets/Dima.png', img => {
+     CharacX=-75;
+      img.resize(250,220);
+    image(img,CharacX,75);
+      
+  }); 
+  } else if (Charac===1&&sceneNum>5) {
+   
+    loadImage('assets/Nathan.png', img => {   
+      CharacX=-35;
+      img.resize(200,150);
+    image(img, CharacX, 65);
+  });
+  }
   if (sceneNum===0) {
     drawScene0();
       
@@ -749,7 +815,9 @@ function draw() {
   else if(sceneNum===1){
      drawScene1()
       btnD.draw()
-      btnE.draw()
+      btnQ.draw()
+      btnR.draw()
+      btnS.draw()
      }//Ready screen
   else if(sceneNum===2){
      drawScene2()
