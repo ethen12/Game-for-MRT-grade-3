@@ -63,6 +63,7 @@ function preload() {
             }
 function setup() {
   createCanvas(400, 400);
+
   //loadImage('assets/img.jpg', img => {
    // image(img, 200, 200);
 //  });
@@ -133,7 +134,6 @@ var btnG = new Button({//1-2
       label: "NEXT",
   
 });
-
 var btnH = new Button({//End after win
       x: 170,
       y: 300,
@@ -213,7 +213,6 @@ var drawScene0 = function(){
   img.resize(550,400);
   image(img, -60, 0);
   }); 
-      
   fill(255,255,255);
   stroke(255,255,255);
   textSize(25);
@@ -226,18 +225,19 @@ var drawScene0 = function(){
   textSize(13);
   text("Developed By MAIN GAME",180,250)
   strokeWeight(1);
-  frameRate(10000);
+  
     
   
 }//title screen
 var drawScene1 = function(){
    sceneNum=1;
-  frameRate(10000);
+  frameRate(10);
   loadImage('assets/Ready.jpg', img => {
     img.resize(400,400);
     
     image(img, 0, 0);
   });
+  frameRate(10000);
   loadImage('assets/Nathan.png', img => {   
       img.resize(250,200);
     image(img, -40, 90);
@@ -257,12 +257,12 @@ var drawScene1 = function(){
 }//Ready screen
 var drawScene2 = function(){
   sceneNum=2
-  frameRate(10000);
+  
   loadImage('assets/Main.jpg', img => {
   img.resize(550,400);
   image(img, -60, 0);
   }); 
-  fill(255, 0, 250);
+   fill(255, 0, 250);
   textSize(30);
   noStroke();
   textStyle (BOLD);
@@ -271,7 +271,7 @@ var drawScene2 = function(){
   strokeWeight(4);
   line(255,82,140,82);
   textSize(14);
-  strokeWeight();
+  strokeWeight(1);
   fill(255, 0, 250);
   text("•Start in Ottawa where you are",95,100);
   text("given your first math equation.",100,112);
@@ -287,7 +287,7 @@ var drawScene2 = function(){
 }//rules
 var drawScene3 = function(){
   sceneNum=3
- frameRate(10000);
+ 
  loadImage('assets/Main.jpg', img => {
   img.resize(550,400);
   image(img, -60, 0);
@@ -314,7 +314,7 @@ text("This page was last edited on 3 May 2019, at 01:39 (EST).",65,390);
  
 }//About Us
 var drawScene4 = function(){
-  frameRate(10000);
+  
   rect(0,300,400,150);
   rect(0,0,400,50);
    loadImage('assets/Right.jpg', img => {
@@ -333,7 +333,7 @@ var drawScene4 = function(){
 }//right ans
 var drawScene5 = function(){
     sceneNum=5
- frameRate(10000);
+ 
  loadImage('assets/Wrong.jpg', img => {  
   img.resize(400,400);
   image(img, 0, 40);
@@ -347,7 +347,7 @@ var drawScene5 = function(){
 }//wrong ansr
 var drawScene6 = function(){
      sceneNum=6;
-    frameRate(10000);
+    Anim();
     loadImage('assets/City1.jpg', img => {
     img.resize(550,400);
   image(img, -130, -50);
@@ -382,12 +382,12 @@ var drawScene6 = function(){
 
 var drawScene7 = function(){
     sceneNum=7
-    frameRate(10000);
-      loadImage('assets/Beach2.jpg', img => {
+    Anim();
+      
+    loadImage('assets/Beach2.jpg', img => {
     img.resize(520,400);
   image(img, -30, -30);
   });
-  
    loadImage('assets/PaintSplat.png', img => {
     img.resize(460,300);
   image(img, -20,200);
@@ -416,12 +416,12 @@ var drawScene7 = function(){
     
 }//lvl2
 var drawScene9 = function(){
- frameRate(10000);
- loadImage('assets/Underwater3.jpg', img => {
+   Anim();
+  frameRate(1000);
+   loadImage('assets/Underwater3.jpg', img => {
   img.resize(450,350);
   image(img, -10, -5);
   }); 
-  
    loadImage('assets/PaintSplat.png', img => {
     img.resize(460,300);
   image(img, -20,200);
@@ -448,14 +448,14 @@ var drawScene9 = function(){
   
 }//lvl3
 var drawScene10 = function(){
-  frameRate(10000);
+    Anim();
+  frameRate(1000);
   loadImage('assets/Jungle4.jpg', img => {
     img.resize(400,400);
     
     rotate(51.85);
     image(img, 0,-400);
   });
-  
    loadImage('assets/PaintSplat.png', img => {
      rotate(-51.85);
     img.resize(460,300);
@@ -482,12 +482,12 @@ var drawScene10 = function(){
     text("+",190,295);
 }//lvl4
 var drawScene11 = function(){
-  frameRate(10000);
+    Anim();
+  frameRate(1000);
   loadImage('assets/Mountain5.jpg', img => {
     img.resize(400,400);
     image(img, 0,0);
   });
-  
    loadImage('assets/PaintSplat.png', img => {
     img.resize(460,300);
   image(img, -20,200);
@@ -513,8 +513,9 @@ var drawScene11 = function(){
     text("+",190,295);
 }//lvl5
 var drawScene12 = function(){
-  frameRate(10000);
-loadImage('assets/Desert6.jpg', img => {
+  Anim();
+  frameRate(1000);
+  loadImage('assets/Desert6.jpg', img => {
     img.resize(400,400);
     image(img, 0,-75);
   });
@@ -544,8 +545,9 @@ loadImage('assets/Desert6.jpg', img => {
     text("+",190,295);
 }//lvl6
 var drawScene13 = function(){
-  frameRate(10000);
-  loadImage('assets/Pyramid7.jpg', img => {
+  Anim();
+  frameRate(1000);
+    loadImage('assets/Pyramid7.jpg', img => {
     img.resize(400,400);
     image(img, 0,-45);
   });
@@ -574,8 +576,9 @@ var drawScene13 = function(){
     text("+",190,295);
 }//lvl7
 var drawScene14 = function(){
-frameRate(10000);
-loadImage('assets/Rome8.jpg', img => {
+  Anim();
+  frameRate(1000);
+  loadImage('assets/Rome8.jpg', img => {
     img.resize(400,400);
     image(img, 0,-80);
   });
@@ -605,12 +608,12 @@ loadImage('assets/Rome8.jpg', img => {
     text("+",190,295);
 }//lvl8
 var drawScene15 = function(){
-  frameRate(10000);
-loadImage('assets/Eiffel9.jpg', img => {
+  Anim();
+  frameRate(1000);
+  loadImage('assets/Eiffel9.jpg', img => {
     img.resize(400,320);
     image(img, 0,0);
   });
-  
    loadImage('assets/PaintSplat.png', img => {
     img.resize(460,300);
   image(img, -20,200);
@@ -636,12 +639,12 @@ loadImage('assets/Eiffel9.jpg', img => {
     text("+",190,295);
 }//lvl9
 var drawScene16 = function(){
-  frameRate(10000);
-  loadImage('assets/GreatW10.jpg', img => {
+    Anim();
+    frameRate(1000);
+    loadImage('assets/GreatW10.jpg', img => {
     img.resize(400,350);
     image(img, 0,0);
   });
-  
    loadImage('assets/PaintSplat.png', img => {
     img.resize(460,300);
   image(img, -20,200);
@@ -667,7 +670,7 @@ var drawScene16 = function(){
     text("x",190,295);
 }//lvl10
 var drawScene17= function(){
-   frameRate(10000);
+   
    loadImage('assets/Win.jpg', img => {
     img.resize(400,400);
     image(img, 0,0);
@@ -804,12 +807,12 @@ function mouseClicked () {
 var CharacX  = 0;
 var Charac1X = -75;
 var Charac2X = -35;
-function draw() {
-  frameRate(10000);
+function Anim() {
+   
   if (Charac===2&&sceneNum>5) {
-   
+       
     loadImage('assets/Jennifer.png', img => {
-   
+   frameRate(10000000000000000000);
       img.resize(100,110);
     image(img, CharacX, 100);
     
@@ -823,7 +826,7 @@ function draw() {
   } else if (Charac===3&&sceneNum>5) {
     
     loadImage('assets/Dima.png', img => {
-     
+     frameRate(10000000000000000000);
       img.resize(250,220);
     image(img,Charac1X,75);
         
@@ -839,7 +842,7 @@ function draw() {
   } else if (Charac===1&&sceneNum>5) {
    
     loadImage('assets/Nathan.png', img => {   
-      
+      frameRate(10000000000000000000);
       img.resize(200,150);
     image(img, Charac2X, 65);
       
@@ -852,9 +855,12 @@ function draw() {
   {
     Charac2X=-35;
   }
-  }
+  } 
+}
+function draw() {
+  
   if (sceneNum===0) {
-   frameRate(10000);
+   
    drawScene0();
       
       btnA.draw()
@@ -863,7 +869,7 @@ function draw() {
       
   }//title screen
   else if(sceneNum===1){
-    frameRate(10000);
+    
     drawScene1()
       btnD.draw()
       btnQ.draw()
@@ -871,27 +877,27 @@ function draw() {
       btnS.draw()
      }//Ready screen
   else if(sceneNum===2){
-     frameRate(10000);
+     
      drawScene2()
       btnD.draw()
   }//rules
   else if(sceneNum===3){
-   frameRate(10000);
+   
    drawScene3()
       btnD.draw()
   }//About Us
   else if (sceneNum===4){
-     frameRate(10000);
+     
      drawScene4()
     btnG.draw()
   }//right1-2
   else if(sceneNum===5){
-    frameRate(10000);
+    
     drawScene5()
     btnF.draw() 
   }//wrong ansr
   else if(sceneNum===6){
-   frameRate(10000);
+   
    drawScene6()
     btnI.draw()
     btnJ.draw()
@@ -899,7 +905,7 @@ function draw() {
     btnL.draw()
   }//lvl1
   else if(sceneNum===7){
-     frameRate(10000);
+     
      drawScene7()
       btnI.draw()
       btnJ.draw()
@@ -907,7 +913,7 @@ function draw() {
       btnL.draw()
   }//lvl2
   else if (sceneNum===9){
-    frameRate(10000);
+    
     drawScene9()
      btnI.draw()
       btnJ.draw()
@@ -915,7 +921,7 @@ function draw() {
       btnL.draw()
   }//lvl3
   else if (sceneNum===10){
-    frameRate(10000);
+    
     drawScene10()
       btnI.draw()
       btnJ.draw()
@@ -923,7 +929,7 @@ function draw() {
       btnL.draw()
   }//lvl4
   else if (sceneNum===11){
-   frameRate(10000);
+   
    drawScene11()
       btnI.draw()
       btnJ.draw()
@@ -931,7 +937,7 @@ function draw() {
       btnL.draw()
   }//lvl5
   else if (sceneNum===12){
-   frameRate(10000);
+   
    drawScene12()
       btnI.draw()
       btnJ.draw()
@@ -939,7 +945,7 @@ function draw() {
       btnL.draw()
   }//lvl6
   else if (sceneNum===13){
-   frameRate(10000);
+   
    drawScene13()
       btnI.draw()
       btnJ.draw()
@@ -955,7 +961,7 @@ function draw() {
       btnL.draw()
   }//lvl8
   else if (sceneNum===15){
-   frameRate(10000);
+   
    drawScene15()
       btnI.draw()
       btnJ.draw()
@@ -963,7 +969,7 @@ function draw() {
       btnL.draw()
   }//lvl9
   else if (sceneNum===16){
-   frameRate(10000);
+   
    drawScene16()
       btnM.draw()
       btnN.draw()
@@ -971,46 +977,46 @@ function draw() {
       btnP.draw()
   }//lvl10
   else if (sceneNum===17){
-   frameRate(10000);
+   
    drawScene17()
   }//win screen
   else if (sceneNum===18){
-    frameRate(10000);
+    
     drawScene4()
     btnG.draw()
   }//right2-3
   else if (sceneNum===19){
-   frameRate(10000);
+   
    drawScene4()
     btnG.draw()
   }//right3-4
   else if (sceneNum===20){
-    frameRate(10000);
+    
     drawScene4()
     btnG.draw()
   }//right4-5
   else if (sceneNum===21){
-   frameRate(10000);
+   
    drawScene4()
     btnG.draw()
   }//right5-6
   else if (sceneNum===22){
-    frameRate(10000);
+    
     drawScene4()
     btnG.draw()
   }//right6-7
   else if (sceneNum===23){
-   frameRate(10000);
+   
    drawScene4()
     btnG.draw()
   }//right7-8
   else if (sceneNum===24){
-   frameRate(10000);
+   
    drawScene4()
     btnG.draw()
   }//right8-9
   else if (sceneNum===25){
-   frameRate(10000);
+   
    drawScene4()
     btnG.draw()
   }//right9-10
